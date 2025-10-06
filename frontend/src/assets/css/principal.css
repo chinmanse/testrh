@@ -1,0 +1,129 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px 260px 1fr;
+  height: 100vh;
+  background-color: #f9fafb;
+  font-family: sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+}
+
+.sidebar .logo {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.2s;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+/* Notes list */
+.notes-list {
+  background: #f3f4f6;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.new-note-btn {
+  width: 100%;
+  padding: 8px 0;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.note-item {
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.note-item.selected {
+  border: 2px solid #2563eb;
+}
+
+.note-item h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+.note-item p {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Note content */
+.note-content {
+  padding: 20px;
+}
+
+.note-content h2 {
+  margin-top: 0;
+}
+
+.note-date {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.note-content textarea {
+  width: 100%;
+  height: calc(100vh - 240px);
+  resize: none;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+}
+
+.note-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.save-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.cancel-btn {
+  background: #e5e7eb;
+}
