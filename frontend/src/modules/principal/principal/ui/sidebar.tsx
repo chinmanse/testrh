@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "src/assets/css/sidebar.css"
+import logo from "src/assets/images/logo.png"
 
 type NavKey = "all" | "archived";
 
@@ -51,7 +52,7 @@ export const Sidebar: React.FC = () => {
     <aside className="sidebar">
       <div className="sidebar-top">
         <div className="brand">
-          <img src="/logo.svg" alt="Notes logo" className="brand-icon" />
+          <img src={logo} alt="Notes logo" className="brand-icon" />
           <span className="brand-text">Notes</span>
         </div>
 

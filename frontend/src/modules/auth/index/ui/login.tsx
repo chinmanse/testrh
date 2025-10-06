@@ -7,7 +7,7 @@ import { InputPassword } from "../../../../components/input_forms/inputPassword"
 
 const LoginModule: React.FC = () => {
   
-  const { formik } = useContext(authContext);
+  const { formik, toRegistry } = useContext(authContext);
 
   return (
     <div className="login-page">
@@ -50,13 +50,13 @@ const LoginModule: React.FC = () => {
           <span>Or log in with:</span>
         </div>
 
-        <a className="btn-google">
+        <a className="btn-google" onClick={()=>{toRegistry()}}>
           <b className="google-letter">G</b>
           Google
         </a>
 
         <p className="signup-text">
-          No account yet? <a href="#">Sign Up</a>
+          No account yet? <a onClick={()=>{toRegistry()}}>Sign Up</a>
         </p>
       </div>
     </div>
