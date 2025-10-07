@@ -1,5 +1,7 @@
 import React from 'react';
 import "src/assets/css/actions.css"
+import Achive from "src/assets/icons/archive.svg"
+import Delete from "src/assets/icons/delete.svg"
 
 interface NotesActionsPanelProps {
   onArchiveNote: () => void;
@@ -21,18 +23,20 @@ const ActionsPanel: React.FC<NotesActionsPanelProps> = ({
 
       <div className="actions-section">
         <button
-          className="action-btn archive-btn"
+          className="action-btn"
           onClick={onArchiveNote}
           disabled={!selectedNote}
         >
+          <img src={Achive} alt="Archive" className="action-icon" />
           Archive Note
         </button>
 
         <button
-          className="action-btn delete-btn"
+          className="action-btn"
           onClick={onDeleteNote}
           disabled={!selectedNote}
         >
+          <img src={Delete} alt="Delete" className="action-icon" />
           Delete Note
         </button>
       </div>

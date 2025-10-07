@@ -95,11 +95,8 @@
 
 /* Active item */
 .nav-item.active {
-  background: #eef4ff;
-  box-shadow: 0 1px 0 rgba(37,99,235,0.08);
-  border-left: 4px solid var(--accent);
+  background: #eef4ff; 
   padding-left: 8px; /* visual alignment with left border */
-  color: var(--accent);
 }
 
 .nav-item.active .nav-right svg {

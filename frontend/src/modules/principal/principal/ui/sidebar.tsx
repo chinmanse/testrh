@@ -1,30 +1,10 @@
 import React, { useState } from "react";
 import "src/assets/css/sidebar.css"
 import logo from "src/assets/images/logo.png"
-
+import Home from "src/assets/icons/home.svg"
+import Archive from "src/assets/icons/archive.svg"
+import Tag from "src/assets/icons/tag.svg"
 type NavKey = "all" | "archived";
-
-const IconHome = ({ className = "" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-    <path d="M3 11.5L12 4l9 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M5 21V12h14v9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const IconArchive = ({ className = "" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-    <rect x="3" y="4" width="18" height="4" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M21 8v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M10 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const IconTag = ({ className = "" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-    <path d="M20.59 13.41L10.59 3.41A2 2 0 0 0 9.17 3H6a2 2 0 0 0-2 2v3.17c0 .53.21 1.04.59 1.41l10 10a2 2 0 0 0 2.83 0l3-3a2 2 0 0 0 0-2.83z" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="7.5" cy="7.5" r="1" fill="currentColor"/>
-  </svg>
-);
 
 const IconChevron = ({ className = "" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -63,7 +43,8 @@ export const Sidebar: React.FC = () => {
             aria-current={active === "all" ? "page" : undefined}
           >
             <span className="nav-left">
-              <span className="nav-icon"><IconHome /></span>
+
+              <span className="nav-icon"><img src={Home} /></span>
               <span className="nav-label">All Notes</span>
             </span>
             <span className="nav-right"><IconChevron /></span>
@@ -74,7 +55,7 @@ export const Sidebar: React.FC = () => {
             onClick={() => setActive("archived")}
           >
             <span className="nav-left">
-              <span className="nav-icon"><IconArchive /></span>
+              <span className="nav-icon"><img src={Archive} /></span>
               <span className="nav-label">Archived Notes</span>
             </span>
             <span className="nav-right"><IconChevron /></span>
@@ -87,7 +68,7 @@ export const Sidebar: React.FC = () => {
         <ul className="tags-list">
           {tags.map((t) => (
             <li key={t} className="tag-item">
-              <span className="tag-icon"><IconTag /></span>
+              <span className="tag-icon"><img src={Tag} /></span>
               <span className="tag-label">{t}</span>
             </li>
           ))}
